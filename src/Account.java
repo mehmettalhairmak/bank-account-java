@@ -5,6 +5,23 @@ public class Account {
     private String customerEmail;
     private String customerPhone;
 
+    public Account() {
+        this("573267", 0.00, "Default Name", "Default Email", "Default Phone");
+        System.out.println("Account created.");
+    }
+
+    public Account(String number, double balance, String customerName, String customerEmail, String customerPhone) {
+        this.number = number;
+        this.balance = balance;
+        this.customerName = customerName;
+        this.customerEmail = customerEmail;
+        this.customerPhone = customerPhone;
+    }
+
+    public Account(String customerName, String customerEmail, String customerPhone) {
+        this("99999", 0.00, customerName, customerEmail, customerPhone);
+    }
+
     public void depositFunds(double depositAmount) {
         balance += depositAmount;
         System.out.println("Deposit of $" + depositAmount + " made. New balance is $" + balance);
